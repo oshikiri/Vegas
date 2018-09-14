@@ -72,5 +72,5 @@ process.
     sbt release
     ```
 
-2. Go to the Vegas github [repo](https://github.com/aishfenton/Vegas) and
+2. Go to the Vegas github [repo](https://github.com/vegas-viz/Vegas) and
 add release notes under "releases"
