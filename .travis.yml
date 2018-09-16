@@ -31,7 +31,8 @@ jdk:
   - oraclejdk8
 
 script:
-  - sbt clean coverage test vegaLiteSpec/test
+  - sbt clean coverage test
+  - sbt vegaLiteSpec/clean vegaLiteSpec/test mkVegaModel
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
