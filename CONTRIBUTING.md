@@ -35,7 +35,7 @@ plots out an HTML page and opens it in your browser.
     sbt look
     ```
 
-## Dev and debugging tips
+## Developing and debugging tips
 
 * Generate the vegas model and json codecs. Vegas generates most of the
 vega-lite model and json codecs from the `vega-lite-schema.json` file. To
