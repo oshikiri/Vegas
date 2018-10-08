@@ -37,15 +37,6 @@ plots out an HTML page and opens it in your browser.
 
 ## Developing and debugging tips
 
-* Generate the vegas model and json codecs. Vegas generates most of the
-vega-lite model and json codecs from the `vega-lite-schema.json` file. To
-re-generate it run the following. This generates the code (in the vegaLiteSpec
-project) and copies the `Spec.scala` file into the Vegas src dir.
-
-    ```bash
-    sbt vegaLiteSpec/clean mkVegaModel
-    ```
-
 * Updating vega-lite dependency version. If you want to pull in a new version
 of vega-lite. First, in `build.sbt`, update the vegaLiteVersion setting in
 commonSettings. Second, run the following sbt command to download the new
