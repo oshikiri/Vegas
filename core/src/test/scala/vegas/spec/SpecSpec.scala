@@ -14,7 +14,10 @@ class SpecSpec extends FlatSpec with Matchers with JsonMatchers {
   import vegas.spec.Spec._
   import vegas.spec.Spec.Implicits._
 
-  val examples = new File("core/src/test/resources/example-specs").listFiles.toList.filter(_.getName.endsWith(".json"))
+  val examples = new File("core/src/test/resources/example-specs")
+    .listFiles
+    .toList
+    .filter(_.getName.endsWith(".json"))
 
   "Spec" should "provide case-classes for vega-lite objects" in {
     """
@@ -28,8 +31,10 @@ class SpecSpec extends FlatSpec with Matchers with JsonMatchers {
     """ should (compile)
   }
 
-  it should "round trip the vega-lite example set" in {
-    examples.foreach { example =>
+
+  examples.sortBy(_.getName).foreach { example =>
+    val jsonName = example.getName
+    it should s"round trip the vega-lite example set with $jsonName" in {
       val json = Source.fromFile(example).getLines.mkString
       val spec = parser.decode[VegaUnion](json)
 
@@ -39,4 +44,3 @@ class SpecSpec extends FlatSpec with Matchers with JsonMatchers {
   }
 
 }
-
